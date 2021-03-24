@@ -11,7 +11,7 @@ const Timeline = () => {
   const [newMessage, setNewMessage] = useState('');
 
   const subscribeToEvents = () => {
-    const io = socket('http://localhost:3333');
+    const io = socket('https://sd-back-api.herokuapp.com/');
 
     io.on('tweet', (data) => {
       setMessage({ messages: [data, ...messages] });

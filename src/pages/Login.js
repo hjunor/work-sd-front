@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
-      <img src={LogoTwiter} alt="Gotwitter" />
+      <label htmlFor=""> Nome</label>
       <form onSubmit={handleSubmit}>
         <input
           value={user}
