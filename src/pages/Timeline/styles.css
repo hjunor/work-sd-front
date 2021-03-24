@@ -10,6 +10,7 @@
 @media screen and (max-width: 600px) {
   .timeline-wrapper {
     width: 98%;
+    margin: 0 auto;
   }
 }
 
