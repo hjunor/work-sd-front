@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Login.css';
-import LogoTwiter from '../assets/twitter.svg';
 
 const Login = () => {
   const [user, setuser] = useState('');
