@@ -34,11 +34,9 @@ const Timeline = () => {
     e.preventDefault();
 
     const message = newMessage;
-    console.log(message);
+    setNewMessage(' ');
 
     await api.post('message', { message, user });
-
-    setNewMessage(' ');
   };
   const handleInputChange = (e) => {
     setNewMessage(e.target.value);
