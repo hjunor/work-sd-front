@@ -1,7 +1,7 @@
 .timeline-wrapper {
-  width: 600px;
-  height: 500px;
-  margin: 50px auto;
+  width: 40%;
+  height: 800px;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -11,24 +11,35 @@
 .timeline-wrapper form {
   width: 100%;
   background: #e9f1f6;
-  padding: 20px;
   border-radius: 5px;
-  margin: 30px 0;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .timeline-wrapper form textarea {
   border: 3px solid #d8e5ed;
   border-radius: 5px;
   font-size: 14px;
-  padding: 15px;
-  width: 95%;
+  padding: 20px;
+  width: 90%;
   resize: none;
 }
 
 .tweet-list {
-  list-style: none;
+  width: 100%;
   position: relative;
   color: #1c2022;
   overflow-y: scroll;
+  transform: rotate(180deg);
+}
+.btn {
+  border: none;
+  background-color: #4bb0ee;
+  color: #e9f1f6;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin: 0 5px 5px 0;
 }

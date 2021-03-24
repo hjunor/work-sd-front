@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './Login.css';
+import './styles.css';
+import ico from '../../assets/ico.ico';
 
 const Login = () => {
   const [user, setuser] = useState('');
@@ -22,7 +23,7 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
-      <label htmlFor=""> Nome</label>
+      <img src={ico} alt="" />
       <form onSubmit={handleSubmit}>
         <input
           value={user}

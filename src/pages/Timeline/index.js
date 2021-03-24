@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-import api from '../services/api';
+import api from '../../services/api';
 
 import socket from 'socket.io-client';
-import './Timeline.css';
+import './styles.css';
 
-import Message from '../components/Message';
+import Message from '../../components/Message';
 
 const Timeline = () => {
   const [messages, setMessage] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const [user] = useState(localStorage.getItem('username'));
 
   const subscribeToEvents = () => {
     const io = socket('https://sd-back-api.herokuapp.com/');
@@ -34,7 +35,6 @@ const Timeline = () => {
 
     const message = newMessage;
     console.log(message);
-    const user = localStorage.getItem('username');
 
     await api.post('message', { message, user });
 
@@ -48,13 +48,15 @@ const Timeline = () => {
     <div className="timeline-wrapper">
       <ul className="tweet-list">
         {messages.map((message) => (
-          <Message key={message._id} message={message} />
+          <Message key={message._id} message={message} user={user} />
         ))}
       </ul>
       <form>
         <textarea value={newMessage} onChange={handleInputChange} />
 
-        <button onClick={handlelNewTweet}>Enviar</button>
+        <button className="btn" onClick={handlelNewTweet}>
+          Ok
+        </button>
       </form>
     </div>
   );
