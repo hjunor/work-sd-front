@@ -11,24 +11,24 @@ const Timeline = () => {
   const [newMessage, setNewMessage] = useState('');
   const [user] = useState(localStorage.getItem('username'));
 
-  const subscribeToEvents = () => {
-    const io = socket('https://sd-back-api.herokuapp.com/');
-
-    io.on('message', (data) => {
-      setMessage({ messages: [data, ...messages] });
-    });
-  };
-
   useEffect(() => {
     async function fetchData() {
       subscribeToEvents();
-
       const response = await api.get('message');
       setMessage(response.data);
     }
     fetchData();
     // eslint-disable-next-line
   }, [messages]);
+
+  const subscribeToEvents = () => {
+    const io = socket('https://sd-back-api.herokuapp.com/');
+
+    io.on('message', (data) => {
+      setMessage([data, ...messages]);
+      console.log(data);
+    });
+  };
 
   const handlelNewMessage = async (e) => {
     e.preventDefault();

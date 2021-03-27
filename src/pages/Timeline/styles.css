@@ -56,7 +56,9 @@
   overflow-y: scroll;
   transform: rotate(180deg);
 }
-
+.list::-webkit-scrollbar {
+  width: 0px;
+}
 .box-loading {
   display: flex;
   align-items: center;
@@ -64,8 +66,8 @@
 }
 
 .loading {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 5px solid #3d444938;
   border-top-color: #4bb0ee;
   border-radius: 50%;
