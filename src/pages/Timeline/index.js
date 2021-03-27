@@ -14,7 +14,7 @@ const Timeline = () => {
   const subscribeToEvents = () => {
     const io = socket('https://sd-back-api.herokuapp.com/');
 
-    io.on('tweet', (data) => {
+    io.on('message', (data) => {
       setMessage({ messages: [data, ...messages] });
     });
   };
@@ -30,7 +30,7 @@ const Timeline = () => {
     // eslint-disable-next-line
   }, [messages]);
 
-  const handlelNewTweet = async (e) => {
+  const handlelNewMessage = async (e) => {
     e.preventDefault();
 
     const message = newMessage;
@@ -44,15 +44,21 @@ const Timeline = () => {
 
   return (
     <div className="timeline-wrapper">
-      <ul className="tweet-list">
-        {messages.map((message) => (
-          <Message key={message._id} message={message} user={user} />
-        ))}
+      <ul className="list">
+        {messages.length === 0 ? (
+          <div className="box-loading">
+            <h1 className="loading">...</h1>
+          </div>
+        ) : (
+          messages.map((message) => (
+            <Message key={message._id} message={message} user={user} />
+          ))
+        )}
       </ul>
       <form>
         <textarea value={newMessage} onChange={handleInputChange} />
 
-        <button className="btn" onClick={handlelNewTweet}>
+        <button className="btn" onClick={handlelNewMessage}>
           Ok
         </button>
       </form>

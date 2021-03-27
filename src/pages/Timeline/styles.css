@@ -1,11 +1,23 @@
 .timeline-wrapper {
-  width: 40%;
+  width: 60%;
   height: 100vh;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
   align-items: stretch;
+}
+@media screen and (max-width: 1400px) {
+  .timeline-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .timeline-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 600px) {
   .timeline-wrapper {
@@ -21,6 +33,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
+  height: 80px;
 }
 
 .timeline-wrapper form textarea {
@@ -30,23 +44,50 @@
   padding: 2px;
   width: 90%;
   resize: none;
+  height: 50px;
 }
 
-.tweet-list {
+.list {
+  padding-inline-start: 0px;
+
   width: 100%;
   position: relative;
   color: #1c2022;
   overflow-y: scroll;
   transform: rotate(180deg);
 }
+
+.box-loading {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #3d444938;
+  border-top-color: #4bb0ee;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  animation: bol 1s linear infinite;
+  color: white;
+}
+
+@keyframes bol {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .btn {
   border: none;
   background-color: #4bb0ee;
   color: #e9f1f6;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   font-weight: bold;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
