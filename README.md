@@ -44,13 +44,21 @@ Esse projeto foi desenvolvido com a seguinte tecnologiaa:
 
 ### Pré-requisitos
 
-1 - Fazer o clone da aplicaçao;
+1 - Fazer o clone da aplicaçao:
 
 2 - Instalar os pacotes com o comando yarn ou npm:
 
 ```bash
 # Em um terminal, entrar na raiz do projeto e rodar o comando:
 $ yarn
+# ou
 $ npm install
+
+```
+
+3 - Rodando o Projeto:
+
+```bash
+$ yarn start
 
 ```
