@@ -68,4 +68,4 @@ $ yarn start
 Arquivos importantes:
 
 - [Api](./src/services/api.js)
-- [Timeline](./scr/pages/Timeline/index.js)
+- [Timeline](./src/pages/Timeline/index.js)
