@@ -62,3 +62,10 @@ $ npm install
 $ yarn start
 
 ```
+
+5 -
+
+Arquivos importantes:
+
+- [Api](./src/services/api.js)
+- [Timeline](./scr/pages/Timeline/index.js)

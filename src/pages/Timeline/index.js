@@ -10,7 +10,7 @@ const Timeline = () => {
   const [messages, setMessage] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [user] = useState(localStorage.getItem('username'));
-
+  //Acima esta a inicialização dos estados.
   useEffect(() => {
     async function fetchData() {
       subscribeToEvents();
@@ -20,6 +20,7 @@ const Timeline = () => {
     fetchData();
     // eslint-disable-next-line
   }, [messages]);
+  //Esse hook faz o monitoramento toda vez que ouver uma mudança na mensages.
 
   const subscribeToEvents = () => {
     const io = socket('https://sd-back-api.herokuapp.com/');
@@ -29,6 +30,7 @@ const Timeline = () => {
       console.log(data);
     });
   };
+  //Função responsavel para propagar os dados do socket no estado de mensagem.
 
   const handlelNewMessage = async (e) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const Timeline = () => {
     const message = newMessage;
     setNewMessage(' ');
 
-    await api.post('message', { message, user });
+    await api.post('message', { message, user }); //Criando nova mensagem utilizando o metodo POST
   };
   const handleInputChange = (e) => {
     setNewMessage(e.target.value);
